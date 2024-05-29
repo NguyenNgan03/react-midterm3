@@ -49,7 +49,8 @@ const Search = () => {
           Clear
         </button>
       )}
-      <Users users={users} />
+          <Users users={users} />
+          
     </div>
   );
 };

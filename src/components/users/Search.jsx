@@ -14,10 +14,10 @@ const Search = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-    };
-    const clearUsers = () => {
-      setUsers([]);
-    };
+  };
+  const clearUsers = () => {
+    setUsers([]);
+  };
   const onSubmit = (e) => {
     e.preventDefault();
     if (text === "") {
@@ -49,8 +49,7 @@ const Search = () => {
           Clear
         </button>
       )}
-          <Users users={users} />
-          
+      <Users users={users} />
     </div>
   );
 };

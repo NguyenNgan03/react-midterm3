@@ -1,12 +1,13 @@
-// User.js
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useParams } from "react-router-dom";
 import Repos from "../repos/Repos";
+
 const User = () => {
   const { id } = useParams();
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
+
   const getUser = async (username) => {
     try {
       const response = await axios.get(
@@ -18,16 +19,19 @@ const User = () => {
       console.error("Error fetching data:", error.message);
     }
   };
+
   const getUserRepos = async (id) => {
     // To be completed ...
     // This is the small exercise for students
     // Students will write the code to fetch the user's repositories
     // Then display the repositories in the User component
   };
+
   useEffect(() => {
     getUser(id);
     getUserRepos(id);
   }, []);
+
   const {
     name,
     avatar_url,
@@ -43,9 +47,12 @@ const User = () => {
     public_gists,
     hireable,
   } = user;
+
   return (
     <Fragment>
-      <Link to="/" className="btn btn-light"></Link>
+      <Link to="/" className="btn btn-light">
+        Back to Search
+      </Link>
       Hireable:{" "}
       {hireable ? (
         <i className="fas fa-check text-success" />
@@ -118,4 +125,5 @@ const User = () => {
     </Fragment>
   );
 };
+
 export default User;

@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../ThemeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+
 function Navbar() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
@@ -15,13 +18,23 @@ function Navbar() {
             <Link to="/about">About</Link>
           </li>
         </ul>
-        <label htmlFor="checkbox">Dark Mode: </label>
-        <input
-          id="checkbox"
-          type="checkbox"
-          value={darkMode}
+        <button
           onClick={() => setDarkMode(!darkMode)}
-        />
+          style={{
+            background: "none",
+            border: "none",
+            color: "white",
+            cursor: "pointer",
+            fontSize: "1.5em",
+            marginLeft: "1rem",
+          }}
+        >
+          {darkMode ? (
+            <FontAwesomeIcon icon={faMoon} />
+          ) : (
+            <FontAwesomeIcon icon={faSun} />
+          )}
+        </button>
       </div>
     </nav>
   );

@@ -1,8 +1,9 @@
-// UserItem.js
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { ThemeContext } from "../ThemeContext";
 const UserItem = (props) => {
   const { login, avatar_url, html_url } = props.user;
+  const { darkMode } = useContext(ThemeContext);
   return (
     <div className="card text-center">
       <img

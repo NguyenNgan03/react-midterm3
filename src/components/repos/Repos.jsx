@@ -1,12 +1,15 @@
 import React from "react";
-
-const Repos = () => {
+import RepoItem from "./RepoItem";
+const Repos = ({ repos }) => {
   return (
-    <div>
+    <>
       <h1>Repos</h1>
-      <p>To be completed by students</p>
-    </div>
+      <div className="cardList">
+        {repos.map((repo, index) => (
+          <RepoItem key={index} repo={repo} />
+        ))}
+      </div>
+    </>
   );
 };
-
 export default Repos;

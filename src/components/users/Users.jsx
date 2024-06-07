@@ -1,4 +1,3 @@
-// Users.js
 import React from "react";
 import UserItem from "./UserItem";
 const Users = (props) => {

@@ -1,6 +1,5 @@
-import axios from "axios";
 import React, { Fragment,useContext, useEffect, useState } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { getUser, getUserRepos } from "../api";
 import Repos from "../repos/Repos";
 import { ThemeContext } from "../ThemeContext";

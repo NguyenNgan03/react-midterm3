@@ -1,8 +1,7 @@
-import axios from "axios";
 import React, {useEffect, useState } from "react";
 import Users from "./Users";
 import { getUsers } from "../api";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 const Search = () => {
   const [text, setText] = useState("");
